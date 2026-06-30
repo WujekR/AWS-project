@@ -8,7 +8,7 @@ The solution is deployed on an AWS EMR cluster using PySpark, following a clear,
 
 1. **REST API Collector:** Python scripts fetch batch measurements securely using token authentication from 4 stations in the Tricity area (GDN_01, GDN_02, SOP_01, GBA_01).
 2. **Raw Storage (Ingestion):** Unaltered JSON responses are persisted in the `s3://.../raw_data/` layer.
-3. **Processing & Validation:** PySpark DataFrames are used to cast types, handle missing values, and generate synthetic labels for 20 diverse activities based on deterministic weather rules.
+3. **Processing & Validation:** PySpark DataFrames are used to cast types, handle missing values, and generate synthetic labels for 10 diverse activities based on deterministic weather rules.
 4. **Curated Dataset:** Cleaned and labeled data is saved in an optimized Parquet format to `s3://.../curated_data/`.
 5. **Analytics & ML:** A Random Forest Classifier is trained on the curated dataset using PySpark MLlib. 
 6. **Inference & Analytical Output:** The system exposes interactive functions for scenario testing and station-specific querying. Final recommendations with natural language explanations are appended to `s3://.../analytical_output/`.
